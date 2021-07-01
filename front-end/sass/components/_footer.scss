@@ -1,0 +1,12 @@
+footer {
+    display: flex;
+    height: 100px;
+    background-color: $secbg-color;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    a {
+        font-size: 1.3em;
+        margin: 0px 20px;
+    }
+}

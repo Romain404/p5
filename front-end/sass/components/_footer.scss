@@ -6,7 +6,12 @@ footer {
     justify-content: center;
     align-items: center;
     a {
-        font-size: 1.3em;
+        font-size: 1em;
         margin: 0px 20px;
+        color: #000;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

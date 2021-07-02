@@ -2,6 +2,7 @@ const uuid = require('uuid/v1');
 const Camera = require('../models/Camera');
 
 exports.getAllCameras = (req, res, next) => {
+  console.log("0000 getallcameras");
   Camera.find().then(
     (cameras) => {
       const mappedCameras = cameras.map((camera) => {
@@ -18,6 +19,8 @@ exports.getAllCameras = (req, res, next) => {
 };
 
 exports.getOneCamera = (req, res, next) => {
+  console.log("0000 getOneCamera");
+  console.log("0000 getOneCamera + Params :"+req.params.id);
   Camera.findById(req.params.id).then(
     (camera) => {
       if (!camera) {

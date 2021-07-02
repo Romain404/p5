@@ -62,29 +62,39 @@ p {
   font-size: 1.5em;
 }
 
-.items {
+footer {
+  font-family: "Roboto";
+}
+
+#results {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-  padding: 0px 20px;
+  padding: 20px;
+  list-style-type: none;
+  flex-wrap: wrap;
 }
-.items .item {
-  width: 48%;
+#results .item {
+  width: 49%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 5px 50px -10px gray;
+  box-shadow: 0px 5px 30px -10px gray;
+  transition-duration: 400ms;
+  list-style-type: none;
+  margin-bottom: 30px;
 }
-.items .item a {
+#results .item a {
   text-decoration: none;
   color: #000;
+  border-radius: 5px;
 }
-.items .item a img {
+#results .item a img {
   width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.items .item a .description {
+#results .item a .description {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   height: min-content;
@@ -94,10 +104,19 @@ p {
   flex-wrap: wrap;
   align-items: center;
 }
-.items .item a .description #item-description {
+#results .item a .description #item-description {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+#results .item a .description h2, #results .item a .description h3 {
+  margin-bottom: 0;
+}
+#results .item:hover {
+  box-shadow: none;
+}
+#results .item:hover .description, #results .item:hover a {
+  background-color: #f1f1f1;
 }
 
 footer {
@@ -109,8 +128,13 @@ footer {
   align-items: center;
 }
 footer a {
-  font-size: 1.3em;
+  font-size: 1em;
   margin: 0px 20px;
+  color: #000;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
 
 .product {
@@ -145,6 +169,7 @@ footer a {
 }
 
 #addtocart {
+  cursor: pointer;
   border: none;
   background-color: #F5E8F1;
   padding: 20px;

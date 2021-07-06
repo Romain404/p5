@@ -51,12 +51,10 @@ const showArticles = async () => {
 
 	const numberOfOptions = article.lenses.length;
 	let optionSelector = document.getElementById('lenses');
-	let option = document.querySelector('option');
 
 	for (let i = 0; i < numberOfOptions; i++) {
-		let lens = document.createElement("option");
-		console.log("options");
-		optionSelector.appendChild("option");
+		let lens = document.createElement('option');
+		optionSelector.appendChild(lens);
 		lens.textContent = article.lenses[i];
 	}
 

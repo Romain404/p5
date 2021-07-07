@@ -2,8 +2,9 @@ console.log("product.js loaded ✅");
 
 const url = "http://localhost:3000/api/cameras";
 const product = document.getElementById("product");
+const title = document.getElementById('title');
 
-// functions
+
 
 // variables
 let articleId; // ID de l'article sur lequelle le clic à été effectué
@@ -42,7 +43,8 @@ const showArticles = async () => {
   document.getElementById("product-name").textContent = article.name;
   document.getElementById("description").textContent = article.description;
   document.getElementById("price").textContent = article.price + ' €';
-  document.getElementById("lenses").length = article.lenses.length;
+	title.textContent = 'Orinoco - ' + article.name; 
+  
 
   // Récuperation et Affichage de la liste des lentilles
 

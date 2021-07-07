@@ -2,7 +2,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <title>Orinoco - Appareils photos vintages</title>
+    <title id="title">Orinoco - Appareils photos vintages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css" />
     <link
       rel="stylesheet"
@@ -17,17 +18,16 @@
     <header>
       <nav>
         <a href="index.html"><img src="public/img/logo.png" alt="Orinoco" /></a>
-        <button id="cart-btn">
-          <i class="fas fa-shopping-cart fa-2x" id="cart-logo"></i>
-        </button>
+        <a href="cart.html" id="cart-btn"><i class="fas fa-shopping-cart fa-2x" id="cart-logo"></i></a>
       </nav>
     </header>
 
-  <div class="product">
+    <div class="product">
       <img id="product-img" src="./public/img/vcam_1.jpg" />
       <div class="product-des">
         <h1 id="product-name">Zurss 50S</h1>
         <form method="" action="">
+          <h2>Choix de la lentille :</h2>
           <select name="lenses" id="lenses"></select>
           <p id="description">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -38,10 +38,11 @@
         </form>
       </div>
     </div>
-
-    <div id="product"></div>
-
-
+    <footer style="position: absolute; bottom: 0; left: 0; right: 0;">
+      <a href="index.html">Acceuil</a>
+      <a href="#">Contact</a>
+      <a href="#">Mentions Légales</a>
+    </footer>
   </body>
-  <script src="./product.js"></script>
+  <script src="./js/product.js"></script>
 </html>

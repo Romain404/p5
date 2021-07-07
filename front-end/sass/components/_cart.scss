@@ -1,0 +1,57 @@
+.cart {
+  width: 80%;
+  background-color: $secbg-color;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  font-family: "Roboto";
+  border-radius: 10px;
+  margin-top: 50px;
+  h2 {
+    font-family: "Roboto";
+    font-size: 2em;
+    text-align: center;
+  }
+  table {
+    width: 100%;
+    text-align: center;
+    tr {
+      background-color: white;
+    }
+    td {
+      font-size: 1.4em;
+    }
+    .table-titles td {
+      font-weight: bold;
+      font-size: 1.5em;
+      padding: 10px 0;
+    }
+    #productAmount {
+      width: 50px;
+      height: 100%;
+      text-align: center;
+      font-size: 1.3em;
+      border: none;
+      margin: 0 10px;
+    }
+    #amountCell {
+      display: flex;
+      justify-content: center;
+      p {
+        margin: 10px;
+        height: 100%;
+      }
+      button {
+        outline: none;
+        border: none;
+        background-color: white;
+      }
+      #plus {
+        color: rgb(17, 179, 17);
+      }
+      #minus {
+        color: rgb(189, 2, 2);
+      }
+    }
+  }
+}

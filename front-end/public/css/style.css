@@ -7,7 +7,7 @@ nav {
 nav img {
   width: 30% !important;
 }
-nav button {
+nav a {
   cursor: pointer;
   outline: none;
   background-color: #fff;
@@ -16,7 +16,7 @@ nav button {
   height: min-content;
   transition-duration: 400ms;
 }
-nav button:hover {
+nav a:hover {
   color: #F5E8F1;
 }
 
@@ -183,6 +183,64 @@ footer a:hover {
 }
 #addtocart:hover {
   background-color: #f1f1f1;
+}
+
+.cart {
+  width: 80%;
+  background-color: #f1f1f1;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  font-family: "Roboto";
+  border-radius: 10px;
+  margin-top: 50px;
+}
+.cart h2 {
+  font-family: "Roboto";
+  font-size: 2em;
+  text-align: center;
+}
+.cart table {
+  width: 100%;
+  text-align: center;
+}
+.cart table tr {
+  background-color: white;
+}
+.cart table td {
+  font-size: 1.4em;
+}
+.cart table .table-titles td {
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 10px 0;
+}
+.cart table #productAmount {
+  width: 50px;
+  height: 100%;
+  text-align: center;
+  font-size: 1.3em;
+  border: none;
+  margin: 0 10px;
+}
+.cart table #amountCell {
+  display: flex;
+  justify-content: center;
+}
+.cart table #amountCell p {
+  margin: 10px;
+  height: 100%;
+}
+.cart table #amountCell button {
+  outline: none;
+  border: none;
+  background-color: white;
+}
+.cart table #amountCell #plus {
+  color: #11b311;
+}
+.cart table #amountCell #minus {
+  color: #bd0202;
 }
 
 /*# sourceMappingURL=style.css.map */

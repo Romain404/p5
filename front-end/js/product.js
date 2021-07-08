@@ -66,3 +66,12 @@ const showArticles = async () => {
 };
 
 showArticles();
+
+
+let selectedLense;
+
+// Local storage
+
+function saveData() {
+  localStorage.setItem('lense',selectedLense)
+};

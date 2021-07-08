@@ -27,7 +27,7 @@
       padding: 10px 0;
     }
     #productAmount {
-      width: 50px;
+      width: 60px;
       height: 100%;
       text-align: center;
       font-size: 1.3em;
@@ -48,9 +48,11 @@
       }
       #plus {
         color: rgb(17, 179, 17);
+        cursor: pointer;
       }
       #minus {
         color: rgb(189, 2, 2);
+        cursor: pointer;
       }
     }
   }

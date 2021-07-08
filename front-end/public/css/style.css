@@ -216,7 +216,7 @@ footer a:hover {
   padding: 10px 0;
 }
 .cart table #productAmount {
-  width: 50px;
+  width: 60px;
   height: 100%;
   text-align: center;
   font-size: 1.3em;
@@ -238,9 +238,11 @@ footer a:hover {
 }
 .cart table #amountCell #plus {
   color: #11b311;
+  cursor: pointer;
 }
 .cart table #amountCell #minus {
   color: #bd0202;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

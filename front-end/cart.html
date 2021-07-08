@@ -29,14 +29,14 @@
           <td>Produit</td>
           <td>Option</td>
           <td>Quantité</td>
-          <td>Prix unitaire</td>
-          <td>Totaux</td>
+          <td>Prix unitaire ( € )</td>
+          <td>Totaux ( € )</td>
         </tr>
         <tr id="product">
           <td>Zurss 50S</td>
           <td>35mm 1.4</td>
-          <td id="amountCell"><button id="minus"><i class="fas fa-minus-square fa-2x"></i></button><input type="text" id="productAmount" maxlength="3"><button id="plus"><i class="fas fa-plus-square fa-2x"></i></button></td>
-          <td id="price">100</td>
+          <td id="amountCell"><button id="minus" onclick="operationMinus()"><i class="fas fa-minus-square fa-2x"></i></button><input type="number" id="productAmount" readonly="true" value="1"><button id="plus" onclick="operationPlus()"><i class="fas fa-plus-square fa-2x"></i></button></td>
+          <td id="price">49900</td>
           <td id="priceTotal"></td>
         </tr>
         

@@ -177,7 +177,7 @@ footer a:hover {
 #addtocart {
   cursor: pointer;
   border: none;
-  background: linear-gradient(to right, #ECAB52, #935DF5);
+  background: linear-gradient(to right, #ecab52, #935df5);
   box-shadow: 0px 5px 30px -10px #4d4d4d;
   border-radius: 50px;
   font-family: "Roboto";
@@ -190,6 +190,11 @@ footer a:hover {
 #addtocart:hover {
   opacity: 0.8;
   box-shadow: none;
+}
+
+#addto {
+  margin-top: 50px;
+  margin-left: 10px;
 }
 
 .cart {

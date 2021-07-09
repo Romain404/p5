@@ -2,9 +2,7 @@ console.log("product.js loaded ✅");
 
 const url = "http://localhost:3000/api/cameras";
 const product = document.getElementById("product");
-const title = document.getElementById('title');
-
-
+const title = document.getElementById("title");
 
 // variables
 let articleId; // ID de l'article sur lequelle le clic à été effectué
@@ -42,23 +40,24 @@ const showArticles = async () => {
   document.getElementById("product-img").src = article.imageUrl;
   document.getElementById("product-name").textContent = article.name;
   document.getElementById("description").textContent = article.description;
-  document.getElementById("price").textContent = article.price + ' €';
-	title.textContent = 'Orinoco - ' + article.name; 
-  
+  document.getElementById("price").textContent = article.price + " €";
+  title.textContent = "Orinoco - " + article.name;
+  selectElem.selectedIndex = 0;
 
   // Récuperation et Affichage de la liste des lentilles
 
   console.log(article.lenses.length + " options disponible pour cet article");
   console.table(article.lenses);
 
-	const numberOfOptions = article.lenses.length;
-	let optionSelector = document.getElementById('lenses');
+  const numberOfOptions = article.lenses.length;
+  let optionSelector = document.getElementById("lenses");
 
-	for (let i = 0; i < numberOfOptions; i++) {
-		let lens = document.createElement('option');
-		optionSelector.appendChild(lens);
-		lens.textContent = article.lenses[i];
-	}
+  for (let i = 0; i < numberOfOptions; i++) {
+    let lens = document.createElement("option");
+    optionSelector.appendChild(lens);
+    lens.textContent = article.lenses[i];
+    lens.value = article.lenses[i];
+  }
 
   console.log(
     "Ajout du code HTML avec les informations des différents produit✅"
@@ -67,11 +66,36 @@ const showArticles = async () => {
 
 showArticles();
 
+/////////////////////////////////// Récupreration de l'option selectionné ////////////////////////////
 
-let selectedLense;
+var selectElem = document.getElementById("lenses");
+var selectedLenseIndex;
 
-// Local storage
+// Quand une nouvelle <option> est selectionnée
+selectElem.addEventListener("change", function () {
+  var index = selectElem.selectedIndex;
+  selectedLenseIndex = index;
+  console.log(selectedLenseIndex);
+});
+
+/////////////////////////////////// Local Storage  ////////////////////////////
 
 function saveData() {
-  localStorage.setItem('lense',selectedLense)
-};
+  let cameraName = article.name;
+  let cameraPrice = article.price;
+  let cameraLense = selectElem.value;
+  if (selectElem.selectedIndex == 0) {
+    alert("Veuillez sélectionner une lentille");
+  } else {
+    console.log("Sauvegarde de l'élément et de ça lentille");
+    localStorage.setItem(
+      "cartContent",
+      JSON.stringify({
+        name: cameraName,
+        price: cameraPrice,
+        lense: cameraLense,
+        id: articleId,
+      })
+    );
+  }
+}

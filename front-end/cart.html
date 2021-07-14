@@ -23,7 +23,7 @@
     </header>
 
     <section class="cart">
-        <h2>Votre panier</h2>
+        <h2 id="cart-title">Votre panier</h2>
         <p id="error"></p>
       <table>
         <tr class="table-titles">
@@ -36,17 +36,9 @@
         <tr id="product">
           <td id="name">Zurss 50S</td>
           <td id="lens"></td>
-          <td id="amountCell"><button id="minus" onclick="operationMinus()"><i class="fas fa-minus-square fa-2x"></i></button><input type="number" id="productAmount" readonly="true" value="1"><button id="plus" onclick="operationPlus()"><i class="fas fa-plus-square fa-2x"></i></button></td>
+          <td id="amountCell"><select id="productAmount"></select><button id="delete-btn"><i class="fas fa-trash-alt fa-2x"></i></button></td>
           <td id="price">49900</td>
           <td id="priceTotal"></td>
-        </tr>
-        
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td id="totals"></td>
         </tr>
       </table>
     </section>

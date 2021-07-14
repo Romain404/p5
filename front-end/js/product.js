@@ -5,6 +5,16 @@ const product = document.getElementById("product");
 const title = document.getElementById("title");
 const corfim = document.getElementById("addto");
 
+let selectedLenses = "10";
+let cameraName = "Exemple";
+
+class Product {
+  construtor(articleId, cameraName) {
+    this.articleId = articleId; // La variable articleId renvois l'id de l'article
+    this.cameraName = cameraName; // selectedElem.value renvois le nom de la lentille selectionné
+  }
+}
+
 // variables
 let articleId; // ID de l'article sur lequelle le clic à été effectué
 let article;
@@ -88,15 +98,32 @@ function saveData() {
     alert("Veuillez sélectionner une lentille");
   } else {
     console.log("Sauvegarde de l'élément et de ça lentille");
-    localStorage.setItem(
-      "cartContent",
-      JSON.stringify({
-        name: cameraName,
-        price: cameraPrice,
-        lense: cameraLense,
-        id: articleId,
-      })
-    );
-    corfim.textContent = "L'article à bien été ajouté au panier";
+
+    /// AJOUT AU PANIER ////
+    try {
+      addItemToCart();
+    } catch (error) {
+      alert(error);
+    }
   }
+}
+
+function addItemToCart() {
+  let cartContent = localStorage.getItem("cartContent");
+    SaveDataToLocalStorage();
+}
+
+function SaveDataToLocalStorage(data) {
+  let cameraName = article.name;
+  let cameraPrice = article.price;
+  let cameraLense = selectElem.value;
+  var a = [];
+  a = JSON.parse(localStorage.getItem("cartContent")) || [];
+  a.push(JSON.parse(JSON.stringify({
+    name: cameraName,
+    price: cameraPrice,
+    lense: cameraLense,
+  })
+  ));
+  localStorage.setItem("cartContent", JSON.stringify(a));
 }

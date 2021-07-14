@@ -35,29 +35,19 @@
       width: 60px;
       height: 100%;
       text-align: center;
-      font-size: 1.3em;
+      font-size: 1.1em;
       border: none;
-      margin: 0 10px;
+      margin: 5px;
     }
     #amountCell {
       display: flex;
-      justify-content: center;
-      p {
-        margin: 10px;
-        height: 100%;
-      }
+      justify-content: space-around;
       button {
-        outline: none;
         border: none;
-        background-color: white;
-      }
-      #plus {
-        color: rgb(17, 179, 17);
-        cursor: pointer;
-      }
-      #minus {
-        color: rgb(189, 2, 2);
-        cursor: pointer;
+        background-color: #fff;
+        color: rgba(228, 35, 35, 0.609);
+        margin-top: 5px;
+        margin-bottom: 7px;
       }
     }
   }

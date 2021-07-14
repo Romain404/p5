@@ -236,30 +236,20 @@ footer a:hover {
   width: 60px;
   height: 100%;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.1em;
   border: none;
-  margin: 0 10px;
+  margin: 5px;
 }
 .cart table #amountCell {
   display: flex;
-  justify-content: center;
-}
-.cart table #amountCell p {
-  margin: 10px;
-  height: 100%;
+  justify-content: space-around;
 }
 .cart table #amountCell button {
-  outline: none;
   border: none;
-  background-color: white;
-}
-.cart table #amountCell #plus {
-  color: #11b311;
-  cursor: pointer;
-}
-.cart table #amountCell #minus {
-  color: #bd0202;
-  cursor: pointer;
+  background-color: #fff;
+  color: rgba(228, 35, 35, 0.609);
+  margin-top: 5px;
+  margin-bottom: 7px;
 }
 
 /*# sourceMappingURL=style.css.map */

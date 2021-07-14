@@ -1,52 +1,57 @@
 const productAmount = document.getElementById("productAmount");
 const price = document.getElementById("price");
 const priceTotal = document.getElementById("priceTotal");
-const plus = document.getElementById("plus");
-const minus = document.getElementById("minus");
 const lens = document.getElementById("lens");
 const name = document.getElementById("name");
 const error = document.getElementById("error");
-/////////////////////////////// Sélecteur de quantité /////////////////////////////////////
-
-// Action au clique sur -
-function operationPlus() {
-  productAmount.value++;
-  if (productAmount.value > 1) {
-    error.textContent = null;
-  }
-
-
-  totalArticle();
-}
-
-// Action au clique sur +
-function operationMinus() {
-  productAmount.value--;
-  if (productAmount.value < 1) {
-    console.log("❗️ERROR❗️ : Le nombre d'article ne peut être égal a 0");
-    error.textContent = "La quantité ne peut être inférieur à 1 !";
-    productAmount.value = 1;
-  };
-  totalArticle();
-};
-
-// Nombre d'article multiplié par sont prix
-function totalArticle() {
-    priceTotal.textContent = price.textContent * productAmount.value;
-};
-
-totalArticle();
+const table = document.querySelector("tbody");
+const cartTitle = document.getElementById("cart-title");
 
 ///////////////////////////// Ajout d'un article au panier ////////////////////////////
 
-var JSONdata = localStorage.getItem('cartContent')
+var JSONdata = localStorage.getItem("cartContent");
 var data = JSON.parse(JSONdata);
 
 price.textContent = data.price;
 name.textContent = data.name;
 lens.textContent = data.lense;
 
+const numberOfArticle = data.length;
 
+for (let i = 0; i < numberOfArticle; i++) {
+  let newItem = document.createElement("tr");
+  newItem.id = "product";
+  table.appendChild(newItem);
+  console.log(JSONdata.name);
+  newItem.innerHTML = `
+  <tr id="product">
+    <td id="name">${data.name}</td>
+    <td id="lens">${data.lense}</td>
+    <td id="amountCell"><select id="productAmount"></select><button id="delete-btn"><i class="fas fa-trash-alt fa-2x"></i></button></td>
+    <td id="price">${data.price}</td>
+    <td id="priceTotal"></td>
+  </tr>
+  `;
+}
+/////////////////// Nombre d'article dans le panier ///////////////////
+cartTitle.textContent = "Votre panier ( " + data.length + " articles )";
 
+////////////////// Prix unitaire multiplié par le nombre d'article////////////
+function totalArticle() {
+  priceTotal.textContent = price.textContent * productAmount.value;
+}
 
+totalArticle();
 
+/////////////////////////////// Sélecteur de quantité /////////////////////////////////////
+let maxAmount = 12;
+let minAmount = 1;
+
+for (let i = 0; i < maxAmount; i++) {
+  let number = document.createElement("option");
+  productAmount.appendChild(number);
+  number.textContent = minAmount;
+  minAmount++;
+}
+
+//////////////////////////// Suppression d'un produit /////////////////////////////////

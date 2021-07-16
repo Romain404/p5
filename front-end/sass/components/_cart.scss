@@ -1,21 +1,18 @@
 .cart {
   width: 80%;
-  background-color: $secbg-color;
+  background: linear-gradient(to right, #ecab52, #935df5);
+  opacity: 0.8;
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
   font-family: "Roboto";
   border-radius: 10px;
   margin-top: 50px;
-  p {
-    text-align: center;
-    color: orangered;
-    font-size: 1.3em;
-  }
   h2 {
     font-family: "Roboto";
     font-size: 2em;
     text-align: center;
+    color: #fff;
   }
   table {
     width: 100%;
@@ -24,7 +21,8 @@
       background-color: white;
     }
     td {
-      font-size: 1.4em;
+      font-size: 1.6em;
+      height: 50px;
     }
     .table-titles td {
       font-weight: bold;
@@ -32,23 +30,73 @@
       padding: 10px 0;
     }
     #productAmount {
-      width: 60px;
+      width: 80px;
       height: 100%;
       text-align: center;
-      font-size: 1.1em;
+      font-size: 1.5em;
       border: none;
       margin: 5px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      outline: none;
     }
     #amountCell {
       display: flex;
       justify-content: space-around;
       button {
+        outline: none;
         border: none;
         background-color: #fff;
-        color: rgba(228, 35, 35, 0.609);
-        margin-top: 5px;
-        margin-bottom: 7px;
       }
+    }
+  }
+}
+
+tfoot {
+  text-align: center;
+  td {
+    background-color: #cecece;
+    font-size: 1.4em;
+    padding: 15px;
+  }
+}
+
+form {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  .names {
+    display: flex;
+    align-items: center;
+    #fname, #lname {
+      width: 50%;
+    }
+  }
+  input[type=text], input[type=email] {
+    font-size: 1em;
+    padding: 5px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 50px;
+    margin: 10px;
+    outline: none;
+  }
+  .email {
+    display: flex;
+    align-items: center;
+    #email {
+      width: 100%;
+    }
+  }
+  .shipping {
+    display: flex;
+    align-items: center;
+    #address {
+      width: 70%;
+    }
+    #city {
+      width: 30%;
     }
   }
 }

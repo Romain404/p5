@@ -18,16 +18,10 @@ for (let i = 0; i < numberOfArticle; i++) {
   newItem.id = "product";
   table.appendChild(newItem);
   newItem.innerHTML = `
-    <td id="name">${data[i].name}</td>
-    <td id="lens">${data[i].lense}</td>
-    <td id="amountCell">
-      <select id="productAmount"></select>
-      <button id="delete-btn">
-      <i class="fas fa-trash-alt fa-2x"></i>
-      </button>
-    </td>
-    <td id="price">${data[i].price}</td>
-    <td id="priceTotal"></td>
+
+  <td id="name">${data[i].name}</td>
+  <td id="lens">${data[i].lense}</td>
+  <td id="price">${data[i].price}</td>
   `;
 
   let productName = data[i].name;
@@ -36,39 +30,23 @@ for (let i = 0; i < numberOfArticle; i++) {
   console.log("0002 Prix : " + productPrice);
   let productLense = data[i].lense;
   console.log("0003 Lentille : " + productLense);
-
-  //////////////////////////////////////// Quantity Setting ////////////////////////////////////////////////
-
-  let maxAmount = 12;
-  let minAmount = 1;
-
-  for (let i = 0; i < maxAmount; i++) {
-    let select = document.getElementById("productAmount");
-    let number = document.createElement("option");
-    select.appendChild(number);
-    console.log(select[i]);
-    number.textContent = minAmount;
-    minAmount++;
-  }
 }
-
-function addingQuantity() {
-  let maxAmount = 12;
-  let minAmount = 1;
-
-  //  for (let i = 0; i < maxAmount; i++) {
-  //    let select = document.querySelectorAll("select");
-  //    let number = document.createElement("option");
-  //    number.textContent = minAmount;
-  //    select.appendChild(number);
-  //    minAmount++;
-  //  }
-}
+const productAmount = document.getElementById("productAmount");
 
 /////////////////////////////////////// Nombre d'article dans le panier ////////////////////////////////////
 cartTitle.textContent = "Votre panier ( " + data.length + " articles )";
 
-/////////////////////////////////////// Prix unitaire multiplié par le nombre d'article/////////////////////
-function totalArticle() {}
+////////////////////////////////////// funtions ////////////////////////////////////////////////////////////
 
-/////////////////////////////////////// Suppression des produits ///////////////////////////////////////////
+
+// function test
+function totalPriceOrder(arrayPrice) {
+  let totalPrice = document.getElementById('priceTotal');
+  let total = 0;
+  for (i = 0; i < arrayPrice.length; i++) {
+      total = total + arrayPrice[i];
+      totalPrice.textContent = "Prix total : " + total + "$";
+      //Stockage du prix dans le localStorage pour la page de confirmation
+      localStorage.setItem("totalOrder", JSON.stringify(total));
+  }
+}

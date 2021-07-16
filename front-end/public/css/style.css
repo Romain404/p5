@@ -199,7 +199,8 @@ footer a:hover {
 
 .cart {
   width: 80%;
-  background-color: #f1f1f1;
+  background: linear-gradient(to right, #ecab52, #935df5);
+  opacity: 0.8;
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
@@ -207,15 +208,11 @@ footer a:hover {
   border-radius: 10px;
   margin-top: 50px;
 }
-.cart p {
-  text-align: center;
-  color: orangered;
-  font-size: 1.3em;
-}
 .cart h2 {
   font-family: "Roboto";
   font-size: 2em;
   text-align: center;
+  color: #fff;
 }
 .cart table {
   width: 100%;
@@ -225,7 +222,8 @@ footer a:hover {
   background-color: white;
 }
 .cart table td {
-  font-size: 1.4em;
+  font-size: 1.6em;
+  height: 50px;
 }
 .cart table .table-titles td {
   font-weight: bold;
@@ -233,23 +231,73 @@ footer a:hover {
   padding: 10px 0;
 }
 .cart table #productAmount {
-  width: 60px;
+  width: 80px;
   height: 100%;
   text-align: center;
-  font-size: 1.1em;
+  font-size: 1.5em;
   border: none;
   margin: 5px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  outline: none;
 }
 .cart table #amountCell {
   display: flex;
   justify-content: space-around;
 }
 .cart table #amountCell button {
+  outline: none;
   border: none;
   background-color: #fff;
-  color: rgba(228, 35, 35, 0.609);
-  margin-top: 5px;
-  margin-bottom: 7px;
+}
+
+tfoot {
+  text-align: center;
+}
+tfoot td {
+  background-color: #cecece;
+  font-size: 1.4em;
+  padding: 15px;
+}
+
+form {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+form .names {
+  display: flex;
+  align-items: center;
+}
+form .names #fname, form .names #lname {
+  width: 50%;
+}
+form input[type=text], form input[type=email] {
+  font-size: 1em;
+  padding: 5px;
+  padding-left: 10px;
+  border: none;
+  border-radius: 50px;
+  margin: 10px;
+  outline: none;
+}
+form .email {
+  display: flex;
+  align-items: center;
+}
+form .email #email {
+  width: 100%;
+}
+form .shipping {
+  display: flex;
+  align-items: center;
+}
+form .shipping #address {
+  width: 70%;
+}
+form .shipping #city {
+  width: 30%;
 }
 
 /*# sourceMappingURL=style.css.map */

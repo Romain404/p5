@@ -123,6 +123,7 @@ function SaveDataToLocalStorage(data) {
     name: cameraName,
     price: cameraPrice,
     lense: cameraLense,
+    _id: articleId
   })
   ));
   localStorage.setItem("cartContent", JSON.stringify(a));

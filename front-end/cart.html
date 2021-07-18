@@ -31,17 +31,17 @@
         <tr class="table-titles">
           <td>Produit</td>
           <td>Lentille</td>
-          <td>Prix unitaire ( € )</td>
+          <td>Prix unitaire</td>
         </tr>
         <tfoot>
           <tr>
             <td></td>
             <td>Sous-total</td>
-            <td id="stotal"></td>
+            <td id="stotal">0 €</td>
           </tr>
         </tfoot>
       </table>
-
+      <div class="deleteAll"><button id="deleteAll" onclick="deleteAll()">Vider le panier</button></div>
       <form>
         <div class="names">
           <label for="fname">Prénom</label>
@@ -88,6 +88,7 @@
             placeholder="george.dupont@mail.com"
             required
           />
+          <button id="orderBtn" onclick="buy()">Commander</button>
         </div>
       </form>
     </section>

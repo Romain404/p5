@@ -17,7 +17,7 @@ nav a {
   transition-duration: 400ms;
 }
 nav a:hover {
-  color: #F5E8F1;
+  color: #ecab52;
 }
 
 .welcome {
@@ -186,6 +186,7 @@ footer a:hover {
   padding: 20px 60px;
   transition-duration: 600ms;
   color: #fff;
+  width: max-content;
 }
 #addtocart:hover {
   opacity: 0.8;
@@ -258,10 +259,26 @@ tfoot td {
   background-color: #cecece;
   font-size: 1.4em;
   padding: 15px;
+  font-weight: bold;
+}
+
+#deleteAll {
+  height: 30px;
+  border-radius: 20px;
+  border: solid 1px red;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #ecac5200;
+  margin: 10px;
+  color: black;
+  transition-duration: 600ms;
+}
+#deleteAll:hover {
+  color: red;
+  transform: scale(0.9);
 }
 
 form {
-  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -270,10 +287,12 @@ form .names {
   display: flex;
   align-items: center;
 }
-form .names #fname, form .names #lname {
+form .names #fname,
+form .names #lname {
   width: 50%;
 }
-form input[type=text], form input[type=email] {
+form input[type=text],
+form input[type=email] {
   font-size: 1em;
   padding: 5px;
   padding-left: 10px;
@@ -285,6 +304,7 @@ form input[type=text], form input[type=email] {
 form .email {
   display: flex;
   align-items: center;
+  padding-right: 10px;
 }
 form .email #email {
   width: 100%;
@@ -298,6 +318,54 @@ form .shipping #address {
 }
 form .shipping #city {
   width: 30%;
+}
+
+#orderBtn {
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #ecab52;
+  color: #fff;
+  transition-duration: 600ms;
+}
+#orderBtn:hover {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+* {
+  font-family: "Roboto";
+}
+
+#confirm {
+  background-color: #F2F2F2;
+  padding: 40px;
+  border-radius: 10px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+#confirm a {
+  background: linear-gradient(to right, #ecab52, #935df5);
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 60px;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 50px;
+  margin-top: 50px;
+  transform: scale(1);
+  transition-duration: 400ms;
+  box-shadow: 0px 5px 30px -10px #4d4d4d;
+}
+#confirm a:hover {
+  transform: scale(1.15);
 }
 
 /*# sourceMappingURL=style.css.map */

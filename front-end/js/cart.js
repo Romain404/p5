@@ -147,6 +147,7 @@ async function postForm(dataToSend) {
           let responseId = await response.json();
           console.log(responseId);
           getOrderConfirmationId(responseId);
+          document.location.href = "order.html";
       } else {
           console.error('Retour du serveur : ', response.status);
       }

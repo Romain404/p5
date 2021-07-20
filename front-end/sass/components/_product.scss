@@ -58,3 +58,27 @@
   margin-top: 50px;
   margin-left: 10px;
 }
+
+@media screen and (max-width: 1412px) {
+  h1 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    margin-bottom: 10px;
+    font-size: 1em;
+  }
+  #addtocart {
+    font-size: 1em !important;
+    padding: 10px 30px !important;
+  }
+  #price {
+    margin-bottom: 20px !important;
+  }
+  #addto {
+    margin-top: 10px;
+  }
+}
+
+

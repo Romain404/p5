@@ -3,7 +3,7 @@ console.log("product.js loaded ✅");
 const url = "http://localhost:3000/api/cameras";
 const product = document.getElementById("product");
 const title = document.getElementById("title");
-const corfim = document.getElementById("addto");
+const confirm = document.getElementById("addto");
 
 let selectedLenses = "10";
 let cameraName = "Exemple";
@@ -126,5 +126,11 @@ function SaveDataToLocalStorage(data) {
     _id: articleId
   })
   ));
-  localStorage.setItem("cartContent", JSON.stringify(a));
+  try {
+    localStorage.setItem("cartContent", JSON.stringify(a));
+    confirm.textContent = "L'article à bien été ajouter au panier."
+    setTimeout(function() {confirm.textContent = null;}, 3000);
+  } catch {
+    confirm.textContent = "Echec de l'ajout de l'article au panier."
+  }
 }

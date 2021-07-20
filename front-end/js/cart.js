@@ -7,6 +7,7 @@ const table = document.querySelector("tbody");
 const cartTitle = document.getElementById("cart-title");
 const sTotal = document.getElementById("stotal");
 const deleteBtn = document.getElementById("deleteAll");
+const orderBtn = document.getElementById("orderBtn");
 // tableau des prix
 const arrayPrice = [];
 //////Création du tableau qui va être envoyé au serveur avec les id des caméras
@@ -56,7 +57,12 @@ for (let i = 0; i < numberOfArticle; i++) {
 const productAmount = document.getElementById("productAmount");
 
 /////////////////////////////////////// Nombre d'article dans le panier ////////////////////////////////////
-cartTitle.textContent = "Votre panier ( " + data.length + " articles )";
+if (data.length > 0) {
+  cartTitle.textContent = "Votre panier ( " + data.length + " articles )";
+} else {
+  console.log("panier vide")
+}
+
 
 ////////////////////////////////////// Total commande ///////////////////////////////////////////////////////
 let totalPrice = document.getElementById("stotal");
@@ -92,7 +98,7 @@ function buy() {
     email != "" &&
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
         email
-      ))
+      )) && data.length != 0
   ) {
     console.log('0007 : formulaire ok');
     confirmationOrder();
@@ -163,3 +169,7 @@ function getOrderConfirmationId(responseId) {
   console.log(orderId);
   localStorage.setItem("orderConfirmationId", orderId);
 }
+
+if (data.length = 0) {
+  console.log('panier vide')
+};

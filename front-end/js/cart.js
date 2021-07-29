@@ -76,6 +76,8 @@ function deleteAll() {
   if (r == true) {
     localStorage.removeItem("cartContent");
     location.reload();
+  } else {
+    console.log("ERROR : Cannot delete cart content ❌");
   }
 }
 function buy() {

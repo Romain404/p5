@@ -1,5 +1,3 @@
-console.log("index.js loaded ✅");
-
 const url = "http://localhost:3000/api/cameras";
 const results = document.getElementById('results');
 
@@ -9,8 +7,6 @@ let articles;
 
 const fetchArticles  = async() => {
   articles = await fetch(url).then(res => res.json());
-  console.table(articles);
-  console.log('Chargement des donées terminé✅')
 };
 
 const showArticles = async() => {
@@ -35,8 +31,6 @@ const showArticles = async() => {
       `
     )).join('')
   );
-  console.log("Ajout du code HTML avec les informations des différents produit✅");
-
 };
 
 showArticles();

@@ -1,5 +1,3 @@
-console.log("product.js loaded ✅");
-
 const url = "http://localhost:3000/api/cameras";
 const product = document.getElementById("product");
 const title = document.getElementById("title");
@@ -27,7 +25,6 @@ function getId() {
   var search_params = new URLSearchParams(url.search);
   if (search_params.has("id")) {
     let id = search_params.get("id");
-    console.log("L'id de l'article en question est :❕", id, "❕");
     articleId = id;
   } else {
     console.log("L'id de l'article n'a pas été trouvé ❌");
@@ -42,7 +39,6 @@ const fetchArticles = async () => {
   article = await fetch(`http://localhost:3000/api/cameras/${articleId}`).then(
     (res) => res.json()
   );
-  console.table(article);
 };
 
 const showArticles = async () => {
@@ -57,9 +53,6 @@ const showArticles = async () => {
 
   // Récuperation et Affichage de la liste des lentilles
 
-  console.log(article.lenses.length + " options disponible pour cet article");
-  console.table(article.lenses);
-
   const numberOfOptions = article.lenses.length;
   let optionSelector = document.getElementById("lenses");
 
@@ -69,10 +62,6 @@ const showArticles = async () => {
     lens.textContent = article.lenses[i];
     lens.value = article.lenses[i];
   }
-
-  console.log(
-    "Ajout du code HTML avec les informations des différents produit✅"
-  );
 };
 
 showArticles();
@@ -97,8 +86,6 @@ function saveData() {
   if (selectElem.selectedIndex == 0) {
     alert("Veuillez sélectionner une lentille");
   } else {
-    console.log("Sauvegarde de l'élément et de ça lentille");
-
     /// AJOUT AU PANIER ////
     try {
       addItemToCart();

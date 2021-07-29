@@ -44,11 +44,8 @@ for (let i = 0; i < numberOfArticle; i++) {
   `;
 
   let productName = data[i].name;
-  console.log("0001 Nom : " + productName);
   let productPrice = data[i].price;
-  console.log("0002 Prix : " + productPrice);
   let productLense = data[i].lense;
-  console.log("0003 Lentille : " + productLense);
 
   arrayPrice.push(productPrice);
   products.push(data[i]._id);
@@ -59,8 +56,6 @@ const productAmount = document.getElementById("productAmount");
 /////////////////////////////////////// Nombre d'article dans le panier ////////////////////////////////////
 if (data.length > 0) {
   cartTitle.textContent = "Votre panier ( " + data.length + " articles )";
-} else {
-  console.log("panier vide")
 }
 
 
@@ -69,7 +64,6 @@ let totalPrice = document.getElementById("stotal");
 let total = 0;
 for (i = 0; i < arrayPrice.length; i++) {
   total = total + arrayPrice[i];
-  console.log("0005 ArrayPrices :" + arrayPrice.length);
   totalPrice.textContent = total + " €";
 }
 
@@ -100,11 +94,9 @@ function buy() {
         email
       )) && data.length != 0
   ) {
-    console.log('0007 : formulaire ok');
     confirmationOrder();
     return true;
   } else {
-    console.log("0007: formulaire incomplet");
     alert("Saisissez tous les champs et entrez un email valide");
     return false;
   }
@@ -113,7 +105,6 @@ function buy() {
 function confirmationOrder() {
   getForm();
   dataToSend = JSON.stringify({ contact, products });
-  console.log(dataToSend);
   postForm(dataToSend);
 }
 
@@ -166,10 +157,5 @@ async function postForm(dataToSend) {
 
 function getOrderConfirmationId(responseId) {
   let orderId = responseId.orderId;
-  console.log(orderId);
   localStorage.setItem("orderConfirmationId", orderId);
 }
-
-if (data.length = 0) {
-  console.log('panier vide')
-};

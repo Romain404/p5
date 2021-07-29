@@ -18,8 +18,6 @@ app.use(express.static('images'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-console.log("0000 app.js");
-
 app.use('/api/cameras', cameraRoutes);
 
 module.exports = app;

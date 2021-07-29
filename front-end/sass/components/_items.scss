@@ -5,6 +5,7 @@
   padding: 20px;
   list-style-type: none;
   flex-wrap: wrap;
+  margin-bottom: 100px;
   .item {
     width: 49%;
     border-radius: 5px;
@@ -47,6 +48,15 @@
       .description, a {
         background-color: $secbg-color;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #results {
+    flex-direction: column;
+    .item {
+      width: 100%;
     }
   }
 }

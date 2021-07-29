@@ -116,7 +116,8 @@ function SaveDataToLocalStorage(data) {
   try {
     localStorage.setItem("cartContent", JSON.stringify(a));
     confirm.textContent = "L'article à bien été ajouter au panier."
-    setTimeout(function() {confirm.textContent = null;}, 3000);
+    setTimeout(function() {confirm.textContent = null;}, 1000);
+    setTimeout(function() {document.location.href = "./cart.html"},800);
   } catch {
     confirm.textContent = "Echec de l'ajout de l'article au panier."
   }

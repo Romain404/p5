@@ -1,21 +1,21 @@
 footer {
-    display: flex;
-    height: 100px;
-    background-color: $secbg-color;
-    margin-top: 10%;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    a {
-        font-size: 1em;
-        margin: 0px 20px;
-        color: #000;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
+  display: flex;
+  height: 80px;
+  background-color: $secbg-color;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-top: 50px;
+  a {
+    font-size: 1em;
+    margin: 0px 20px;
+    color: #000;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
+  }
 }

@@ -8,23 +8,20 @@ const cartTitle = document.getElementById("cart-title");
 const sTotal = document.getElementById("stotal");
 const deleteBtn = document.getElementById("deleteAll");
 const orderBtn = document.getElementById("orderBtn");
-// tableau des prix
-const arrayPrice = [];
-//////Création du tableau qui va être envoyé au serveur avec les id des caméras
-let products = [];
-//////Création de l'objet contact contenant les données du formulaire qui va être envoyé au serveur
-let contact = {};
-//////Création d'une classe pour structurer l'objet contact
-class ContactData {
-    constructor(name, surname, adress, city, email) {
-        this.firstName = name;
-        this.lastName = surname;
-        this.address = adress;
-        this.city = city;
-        this.email = email;
-    }
-}
 
+const arrayPrice = [];
+let products = [];
+let contact = {};
+
+class ContactData {
+  constructor(name, surname, adress, city, email) {
+    this.firstName = name;
+    this.lastName = surname;
+    this.address = adress;
+    this.city = city;
+    this.email = email;
+  }
+}
 ///////////////////////////////////////// Ajout d'un article au panier /////////////////////////////////////
 
 var JSONdata = localStorage.getItem("cartContent");
@@ -49,7 +46,7 @@ for (let i = 0; i < numberOfArticle; i++) {
 
   arrayPrice.push(productPrice);
   products.push(data[i]._id);
-  
+
 }
 const productAmount = document.getElementById("productAmount");
 
@@ -88,10 +85,10 @@ function buy() {
   let email = document.getElementById("email").value;
   if (
     (fname,
-    lname,
-    address,
-    city,
-    email != "" &&
+      lname,
+      address,
+      city,
+      email != "" &&
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
         email
       )) && data.length != 0
@@ -135,26 +132,25 @@ async function postForm(dataToSend) {
   let city = document.getElementById("city").value;
   let email = document.getElementById("email").value;
   try {
-      let response = await fetch("http://localhost:3000/api/cameras/order", {
-          method: 'POST',
-          headers: {
-              'content-type': 'application/json'
-          },
-          body: dataToSend
-      });
-      if (response.ok) {
-          let responseId = await response.json();
-          console.log(responseId);
-          getOrderConfirmationId(responseId);
-          document.location.href = "./order.html";
-      } else {
-          console.error('Retour du serveur : ', response.status);
-      }
+    let response = await fetch("http://localhost:3000/api/cameras/order", {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: dataToSend
+    });
+    if (response.ok) {
+      let responseId = await response.json();
+      console.log(responseId);
+      getOrderConfirmationId(responseId);
+    } else {
+      console.error('Retour du serveur : ', response.status);
+    }
   } catch (e) {
-      console.log(e);
+    console.log(e);
   }
 }
-/////////////////////////////////////////////////////////////////////////////////////
+
 // Récupération du numero de commande et sauvegarde de celui ci dans localStorage ///
 
 function getOrderConfirmationId(responseId) {

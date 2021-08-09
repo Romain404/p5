@@ -79,7 +79,6 @@ footer {
   padding: 20px;
   list-style-type: none;
   flex-wrap: wrap;
-  margin-bottom: 100px;
 }
 #results .item {
   width: 49%;
@@ -136,15 +135,15 @@ footer {
 }
 footer {
   display: flex;
-  height: 100px;
+  height: 80px;
   background-color: #f1f1f1;
-  margin-top: 10%;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: relative;
   bottom: 0;
   right: 0;
   left: 0;
+  margin-top: 50px;
 }
 footer a {
   font-size: 1em;
@@ -259,7 +258,7 @@ footer a:hover {
   padding: 30px;
   font-family: "Roboto";
   border-radius: 10px;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 .cart h2 {
   font-family: "Roboto";

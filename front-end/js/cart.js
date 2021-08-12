@@ -23,47 +23,52 @@ class ContactData {
   }
 }
 ///////////////////////////////////////// Ajout d'un article au panier /////////////////////////////////////
-
 var JSONdata = localStorage.getItem("cartContent");
 var data = JSON.parse(JSONdata);
-
 const numberOfArticle = data.length;
 
-for (let i = 0; i < numberOfArticle; i++) {
-  let newItem = document.createElement("tr");
-  newItem.id = "product";
-  table.appendChild(newItem);
-  newItem.innerHTML = `
+function addToCart() {
+  for (let i = 0; i < numberOfArticle; i++) {
+    let newItem = document.createElement("tr");
+    newItem.id = "product";
+    table.appendChild(newItem);
+    newItem.innerHTML = `
 
   <td id="name">${data[i].name}</td>
   <td id="lens">${data[i].lense}</td>
   <td id="price">${data[i].price + " €"}</td>
   `;
 
-  let productName = data[i].name;
-  let productPrice = data[i].price;
-  let productLense = data[i].lense;
+    let productName = data[i].name;
+    let productPrice = data[i].price;
+    let productLense = data[i].lense;
 
-  arrayPrice.push(productPrice);
-  products.push(data[i]._id);
+    arrayPrice.push(productPrice);
+    products.push(data[i]._id);
 
+  }
+  const productAmount = document.getElementById("productAmount");
 }
-const productAmount = document.getElementById("productAmount");
+addToCart();
 
 /////////////////////////////////////// Nombre d'article dans le panier ////////////////////////////////////
-if (data.length > 0) {
-  cartTitle.textContent = "Votre panier ( " + data.length + " articles )";
+function numberOfItems() {
+  if (data.length > 0) {
+    cartTitle.textContent = "Votre panier ( " + data.length + " articles )";
+  }
 }
+numberOfItems();
 
-
-////////////////////////////////////// Total commande ///////////////////////////////////////////////////////
-let totalPrice = document.getElementById("stotal");
-let total = 0;
-for (i = 0; i < arrayPrice.length; i++) {
-  total = total + arrayPrice[i];
-  totalPrice.textContent = total + " €";
+////////////////////////////////////// Total commande /////////////////////////////////////////////////////
+function totalOrder() {
+  let totalPrice = document.getElementById("stotal");
+  let total = 0;
+  for (i = 0; i < arrayPrice.length; i++) {
+    total = total + arrayPrice[i];
+    totalPrice.textContent = total + " €";
+  }
 }
-
+totalOrder();
 ////////////////////////////////////// funtions ////////////////////////////////////////////////////////////
 
 function deleteAll() {
@@ -126,11 +131,6 @@ function getForm() {
 ///////////////////////// Envois de la requête à l'API //////////////////////////////
 
 async function postForm(dataToSend) {
-  let firstname = document.getElementById("fname").value;
-  let lastname = document.getElementById("lname").value;
-  let address = document.getElementById("address").value;
-  let city = document.getElementById("city").value;
-  let email = document.getElementById("email").value;
   try {
     let response = await fetch("http://localhost:3000/api/cameras/order", {
       method: 'POST',
@@ -156,4 +156,5 @@ async function postForm(dataToSend) {
 function getOrderConfirmationId(responseId) {
   let orderId = responseId.orderId;
   localStorage.setItem("orderConfirmationId", orderId);
+  document.location.href = "order.html";
 }

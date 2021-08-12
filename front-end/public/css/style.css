@@ -329,21 +329,21 @@ tfoot td {
   transform: scale(0.9);
 }
 
-form {
+.form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
-form .names {
+.form .names {
   display: flex;
   align-items: center;
 }
-form .names #fname,
-form .names #lname {
+.form .names #fname,
+.form .names #lname {
   width: 50%;
 }
-form input[type=text],
-form input[type=email] {
+.form input[type=text],
+.form input[type=email] {
   font-size: 1em;
   padding: 5px;
   padding-left: 10px;
@@ -352,22 +352,22 @@ form input[type=email] {
   margin: 10px;
   outline: none;
 }
-form .email {
+.form .email {
   display: flex;
   align-items: center;
   padding-right: 10px;
 }
-form .email #email {
+.form .email #email {
   width: 100%;
 }
-form .shipping {
+.form .shipping {
   display: flex;
   align-items: center;
 }
-form .shipping #address {
+.form .shipping #address {
   width: 70%;
 }
-form .shipping #city {
+.form .shipping #city {
   width: 30%;
 }
 

@@ -68,36 +68,29 @@ showArticles();
 
 /////////////////////////////////// Récupreration de l'option selectionné ////////////////////////////
 
-var selectElem = document.getElementById("lenses");
-var selectedLenseIndex;
+  var selectElem = document.getElementById("lenses");
+  var selectedLenseIndex;
 
-// Quand une nouvelle <option> est selectionnée
-selectElem.addEventListener("change", function () {
-  var index = selectElem.selectedIndex;
-  selectedLenseIndex = index;
-});
+  // Quand une nouvelle <option> est selectionnée
+  selectElem.addEventListener("change", function () {
+    var index = selectElem.selectedIndex;
+    selectedLenseIndex = index;
+  });
+
 
 /////////////////////////////////// Local Storage  ////////////////////////////
 
 function saveData() {
-  let cameraName = article.name;
-  let cameraPrice = article.price;
-  let cameraLense = selectElem.value;
   if (selectElem.selectedIndex == 0) {
     alert("Veuillez sélectionner une lentille");
   } else {
     /// AJOUT AU PANIER ////
     try {
-      addItemToCart();
+      SaveDataToLocalStorage();
     } catch (error) {
       alert(error);
     }
   }
-}
-
-function addItemToCart() {
-  let cartContent = localStorage.getItem("cartContent");
-    SaveDataToLocalStorage();
 }
 
 function SaveDataToLocalStorage(data) {
@@ -116,8 +109,8 @@ function SaveDataToLocalStorage(data) {
   try {
     localStorage.setItem("cartContent", JSON.stringify(a));
     confirm.textContent = "L'article à bien été ajouter au panier."
-    setTimeout(function() {confirm.textContent = null;}, 1000);
-    setTimeout(function() {document.location.href = "./cart.html"},800);
+    setTimeout(function () { confirm.textContent = null; }, 1000);
+    setTimeout(function () { document.location.href = "./cart.html" }, 800);
   } catch {
     confirm.textContent = "Echec de l'ajout de l'article au panier."
   }

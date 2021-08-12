@@ -4,5 +4,7 @@ Orinoco est un site de vente en ligne voulant se démarquer des grands site e-co
 ## Installation
 
 ```
-git clone 
+git clone https://github.com/Romain404/p5.git
+
+npm install
 ```
